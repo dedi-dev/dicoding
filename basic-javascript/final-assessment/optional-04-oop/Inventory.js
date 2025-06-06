@@ -1,0 +1,50 @@
+/**
+ * TODO
+ * Selesaikan kode pembuatan class Inventory dengan ketentuan:
+ * - Memiliki properti `items` untuk menampung daftar item dalam bentuk array.
+ * - Memiliki method `addItem` untuk menambahkan item ke properti `items`.
+ * - Memiliki method `removeItem` untuk menghapus item berdasarkan `id`.
+ * - Memiliki method `listItems` untuk mengembalikan string yang merupakan informasi detail barang (dipanggil dari fungs `item.displayDetails()`).
+ */
+
+import Item from "./Item.js";
+
+class Inventory {
+    /**
+     * @constructor
+     * @param {Item[]} items 
+     */
+    constructor(items) {
+        /**
+         * @type {Item[]}
+         */
+        this.items = items;
+    }
+
+    /**
+     * 
+     * @param {Item} item 
+     */
+    addItem(item) {
+        if (!this.items) {
+            this.items = [];
+        }
+        this.items.push(item);
+    }
+
+    /**
+     * 
+     * @param {number} id 
+     */
+    removeItem(id) {
+        this.items = this.items.filter((item) => item.id !== id);
+    }
+
+    listItems() {
+        return this.items.map((item) => item.displayDetails());
+    }
+}
+
+
+// Jangan hapus kode di bawah ini!
+export default Inventory;
