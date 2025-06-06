@@ -12,13 +12,12 @@ import Item from "./Item.js";
 class Inventory {
     /**
      * @constructor
-     * @param {Item[]} items 
      */
-    constructor(items) {
+    constructor() {
         /**
          * @type {Item[]}
          */
-        this.items = items;
+        this.items = [];
     }
 
     /**
@@ -26,9 +25,6 @@ class Inventory {
      * @param {Item} item 
      */
     addItem(item) {
-        if (!this.items) {
-            this.items = [];
-        }
         this.items.push(item);
     }
 
