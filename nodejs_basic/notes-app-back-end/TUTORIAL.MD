@@ -45,3 +45,23 @@ update package.json
 },
 ```
 ### 8. npm install nanoid@3
+
+### 9. connect ssh to aws with key .pem ssh -i "notes-api-webserver.pem" ubuntu@ec2-18-141-145-18.ap-southeast-1.compute.amazonaws.com
+jika ada  error  permission yang terlalu terbuka 
+```
+chmod 400 notes-api-webserver.pem
+```
+
+### 10. install pm2 in server 
+```
+npm install -g pm2
+```
+
+### 11. run app with pm2
+```
+pm2 start npm --name "notes-api" -- run "start:prod"
+
+pm2 restart notes-api //for restart
+pm2 stop notes-api //for stopping
+pm2 start notes-api // start with created name
+```
